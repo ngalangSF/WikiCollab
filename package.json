@@ -1,0 +1,22 @@
+{
+  "name": "blocipedia",
+  "version": "1.0.0",
+  "description": "An application to share wikis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngalang92/blocipedia.git"
+  },
+  "keywords": [
+    "wiki"
+  ],
+  "author": "Nick Galang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngalang92/blocipedia/issues"
+  },
+  "homepage": "https://github.com/ngalang92/blocipedia#readme"
+}
