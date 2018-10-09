@@ -2,9 +2,10 @@
   "name": "blocipedia",
   "version": "1.0.0",
   "description": "An application to share wikis.",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/ngalang92/blocipedia/issues"
   },
-  "homepage": "https://github.com/ngalang92/blocipedia#readme"
+  "homepage": "https://github.com/ngalang92/blocipedia#readme",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
