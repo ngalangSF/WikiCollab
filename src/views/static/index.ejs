@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+      <% include ./partials/navbar.ejs %>
+      <!-- Page Content -->
+      <main class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4">
+          <h1 class="display-5">Welcome to Blocipedia</h1>
+          <p class="lead">An application for collaborating on community-sourced content.</p>
+          <a href="/users/sign_up" class="btn btn-info">Sign up</a>
+        </header>
+
+        <!-- Page Features -->
+        <section class="row text-center">
+
+          <section class="col-lg-6">
+            <h4 class="card-title">Share</h4>
+            <p class="card-text">Write about subjects that are important to you.</p>
+          </section>
+
+          <section class="col-lg-6">
+            <h4 class="card-title">Collaborate</h4>
+            <p class="card-text">Join forces with other users.</p>
+          </section>
+
+        </section>
+        <!-- /.row -->
+      </main>
+      <!-- /.container -->
+      <% include ./partials/baseScripts.ejs %>
+    </body>
+</html>
