@@ -1,10 +1,12 @@
 {
   "development": {
-    "username": "postgres",
+    "username": "nicks",
     "password": null,
     "database": "blocipedia",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false,
+    "operatorsAliases": false
   },
   "test": {
     "username": "nicks",
