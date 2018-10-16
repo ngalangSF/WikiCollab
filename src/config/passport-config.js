@@ -12,16 +12,16 @@ const authHelper = require("../auth/helpers");
     // body of the request by default, so we pass an option called usernameField to
     // specify what property to use instead.
     passport.use(new LocalStrategy({
-      usernameField: "username"
-    }, (username, password, done) => {
+      usernameField: "email"
+    }, (email, password, done) => {
       User.findOne({
-        where: { username }
+        where: { email }
       })
       .then((user) => {
       // If we find no user with a provided email, or if the password provided
       //doesn't match the one stored in the database, we return an error message.
         if (!user || !authHelper.comparePass(password, user.password)) {
-          return done(null, false, { message: "Invalid username or password" });
+          return done(null, false, { message: "Invalid email or password" });
         }
       // If all went well, we return the authenticated user
         return done(null, user);
