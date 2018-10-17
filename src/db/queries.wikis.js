@@ -12,7 +12,9 @@ const Wiki = require("./models").Wiki;
   addWiki(newWiki, callback){
     return Wiki.create({
       title: newWiki.title,
-      body: newWiki.body
+      body: newWiki.body,
+      private: newWiki.private,
+      userId: newWiki.userId
     })
     .then((wiki) => {
       callback(null, wiki);
