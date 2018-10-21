@@ -7,12 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/wikis">Public Wikis</a>
-        </li>        
+        </li>
         <% if(currentUser) { %>
+          <li class="nav-item">
+             <a class="nav-link" href="/users/account">Account</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/users/sign_out">Sign out</a>
           </li>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+     <% include ../static/partials/navbar.ejs %>
+     <main class="container">
+       <% include ../static/partials/messages.ejs %>
+       <h1>Upgrade Your Account</h1>
+      <p>For only $15 per month, create private wikis and share your wikis with collaborators!</p>
+      <form action="/users/<%=currentUser.id%>/upgrade" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_Z1BQTg3bt6xnRodXZmaVepxK"
+          data-amount="1500"
+          data-name="Demo Site"
+          data-description="Example charge"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto">
+        </script>
+      </form>
+    </main>
+     <% include ../static/partials/baseScripts.ejs %>
+   </body>
+</html>

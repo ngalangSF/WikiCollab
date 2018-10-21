@@ -1,5 +1,9 @@
 const userQueries = require("../db/queries.users.js");
 const passport = require("passport");
+const publishableKey = process.env.PUBLISHABLE_KEY;
+const secretKey = process.env.SECRET_KEY;
+const stripe = require("stripe")(secretKey);
+
  module.exports = {
   signUp(req, res, next){
     res.render("users/sign_up");
@@ -23,6 +27,7 @@ const passport = require("passport");
          passport.authenticate("local")(req, res, () => {
            req.flash("notice", "You've successfully signed up!");
            res.redirect("/");
+
          })
        }
      });
@@ -45,5 +50,37 @@ const passport = require("passport");
      req.logout();
      req.flash("notice", "You've successfully signed out!");
      res.redirect("/");
+   },
+   seeAccount(req, res, next){
+     res.render("users/account");
+   },
+   seeUpgrade(req, res, next){
+     res.render("users/upgrade");
+   },
+   pay(req, res, next){
+     stripe.customers.create({
+        email: req.body.stripeEmail,
+        source: req.body.stripeToken
+      })
+      .then((customer) => {
+        stripe.charges.create({
+          amount: 1500,
+          currency: "usd",
+          customer: customer.id,
+          description: "Blocipedia premium membership"
+        })
+      })
+      .then((charge) => {
+        userQueries.upgrade(req.user.dataValues.id);
+        res.render("users/upgrade-success");
+      })
+   },
+   seeUpgradeSuccess(req, res, next){
+     res.render("users/upgrade-success");
+   },
+   downgrade(req, res, next){
+     userQueries.downgrade(req.user.dataValues.id);
+     req.flash("notice", "You've successfully downgraded your account!");
+     res.redirect("/");     
    }
 }

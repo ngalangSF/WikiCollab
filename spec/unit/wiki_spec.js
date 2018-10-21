@@ -1,12 +1,14 @@
 const sequelize = require("../../src/db/models/index").sequelize;
 const Topic = require("../../src/db/models").Wiki;
 const User = require("../../src/db/models").User;
+const Wiki = require("../../src/db/models").Wiki;
  describe("Wiki", () => {
    beforeEach((done) => {
      this.wiki;
      this.user;
       sequelize.sync({force: true}).then((res) => {
        User.create({
+         username: "warriors123",
          email: "starman@tesla.com",
          password: "Trekkie4lyfe"
        })
@@ -15,6 +17,8 @@ const User = require("../../src/db/models").User;
          Wiki.create({
            title: "Expeditions to Alpha Centauri",
            body: "A compilation of reports from recent visits to the star system.",
+           private: false,
+           userId: this.user.id
          })
          .then((wiki) => {
            this.wiki = wiki; //store the wiki
@@ -56,6 +60,7 @@ const User = require("../../src/db/models").User;
    describe("#setUser()", () => {
       it("should associate a wiki and a user together", (done) => {
         User.create({
+         username: "giants123"
          email: "ada@example.com",
          password: "password"
        })

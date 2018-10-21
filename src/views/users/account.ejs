@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+     <% include ../static/partials/navbar.ejs %>
+     <main class="container">
+       <% include ../static/partials/messages.ejs %>
+       <h1>Account Settings</h1>
+      <% if(currentUser && currentUser.role === 'standard') { %>
+      <p>You are a standard user. To create private wikis, upgrade your account.</p>
+      <a href="/users/upgrade" class="btn btn-success">Upgrade</a>
+      <% } else if (currentUser.role === 'premium') { %>
+      <p>You are a premium user. Are you sure you want to downgrade to a standard account?</p>
+      <form style="display:initial" action="/users/<%= currentUser.id %>/downgrade" method="post">
+        <button type="submit" class="btn btn-danger">Downgrade Account</button>
+      </form>
+      <br>
+      <small>You will no longer be able to create private wikis.</small>
+      <% } %>
+     </main>
+     <% include ../static/partials/baseScripts.ejs %>
+   </body>
+</html>
