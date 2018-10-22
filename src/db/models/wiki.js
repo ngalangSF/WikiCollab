@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Wiki = sequelize.define('Wiki', {
+  var Wiki = sequelize.define('Wiki', {
     title: {
-    	type:DataTypes.STRING,
+    	type: DataTypes.STRING,
     	allowNull: false
     },
     body: {
@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     Wiki.belongsTo(models.User, {
      foreignKey: "userId",
      onDelete: "CASCADE"
+   });
+   Wiki.hasMany(models.Collaborator, {
+    foreignKey: "wikiId",
+    as: "collaborators"
    });
   };
   return Wiki;

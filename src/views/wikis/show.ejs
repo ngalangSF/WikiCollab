@@ -16,6 +16,9 @@
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
       <% } %>
+      <% if(wiki.private) { %>
+        <a href="/wikis/<%= wiki.id %>/collaborators" class="btn btn-info">Edit Collaborators</a>
+      <% } %>
       <hr>
       <p><%- wiki.body %></p>
     </main>

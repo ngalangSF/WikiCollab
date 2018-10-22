@@ -84,5 +84,16 @@ const wikiQueries = require("../db/queries.wikis.js");
      wikiQueries.togglePrivate(req.user.dataValues.id);
      req.flash("notice", "You've successfully downgraded your account!");
      res.redirect("/");
-   }
+ },
+ showCollaborations(req, res, next){
+   userQueries.getUser(req.user.id, (err, result) => {
+      user = result["user"];
+      collaborations = result["collaborations"];
+      if(err || user == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("users/collaborations", {user, collaborations});
+      }
+  });
+ }
 }
