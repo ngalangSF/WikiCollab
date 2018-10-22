@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     role: {
      type: DataTypes.STRING,
      allowNull: false,
-     defaultValue: "standard"
+     defaultValue: 'standard'
     }
   }, {});
   User.associate = function(models) {
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
      return this.role === "admin";
    };
 
-   User.prototype.isStandard = function() {
+  User.prototype.isStandard = function() {
      return this.role === "standard";
    };
 

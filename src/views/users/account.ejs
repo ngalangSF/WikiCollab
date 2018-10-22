@@ -12,12 +12,16 @@
       <p>You are a standard user. To create private wikis, upgrade your account.</p>
       <a href="/users/upgrade" class="btn btn-success">Upgrade</a>
       <% } else if (currentUser.role === 'premium') { %>
-      <p>You are a premium user. Are you sure you want to downgrade to a standard account?</p>
+        <p>You are a premium user. Are you sure you want to downgrade to a standard account? </p>
       <form style="display:initial" action="/users/<%= currentUser.id %>/downgrade" method="post">
         <button type="submit" class="btn btn-danger">Downgrade Account</button>
       </form>
       <br>
-      <small>You will no longer be able to create private wikis.</small>
+      <small>Please note:</small>
+      <br>
+      <small>1) You will no longer be able to create private wikis</small>
+      <br>
+      <small>2) Your private wikis will be made public</small>
       <% } %>
      </main>
      <% include ../static/partials/baseScripts.ejs %>

@@ -6,17 +6,17 @@
   <body>
     <main class="container">
       <% include ../static/partials/navbar.ejs %>
-       <h1>Wikis</h1>
-       <% if(!currentUser) { %>
-         <small>Please sign up/sign in to create your own wiki topic.</small>
-       <% } %>
-       <% if(currentUser) { %>
-         <a href="/wikis/new" class="btn btn-success">Create Wiki</a>
-       <% } %>
-       <hr>
+       <h1>My Private Wikis</h1>
+      <% if(currentUser && currentUser.role !== 'premium') { %>
+        <p>You are not authorized to view private wikis. Please upgrade your account </p>
+      <% } %>
+      <% if(currentUser && currentUser.role !== 'standard') { %>
+        <a href="/wikis/new" class="btn btn-success">Create Wiki</a>
+      <% } %>
+      <hr>
       <ul class="list-group">
         <% wikis.forEach((wiki) => { %>
-          <% if(wiki.private === false) { %>
+          <% if(wiki.private === true && wiki.userId === currentUser.id) { %>
             <li class="list-group-item">
               <a href="/wikis/<%= wiki.id %>"> <%= wiki.title %> </a>
             </li>
