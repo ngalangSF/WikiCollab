@@ -18,9 +18,9 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
+    "username": "nicks",
     "password": null,
-    "database": "blocipedia-production",
+    "database": "blocipedia",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false,
