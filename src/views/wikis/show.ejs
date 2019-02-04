@@ -10,6 +10,11 @@
       <% if(!currentUser) { %>
         <small>Please sign up/sign in to create your own wiki topic.</small>
       <% } %>
+      <% if(wiki.private) { %>
+      <a href="/wikis/private" class="btn btn-primary">Wikis</a>
+      <% } else { %>
+        <a href="/wikis" class="btn btn-primary">Wikis</a>
+      <% } %>
       <% if(currentUser) { %>
       <a href="/wikis/<%= wiki.id %>/edit" class="btn btn-warning">Edit</a>
       <form style="display:initial" action="/wikis/<%= wiki.id %>/destroy" method="post">

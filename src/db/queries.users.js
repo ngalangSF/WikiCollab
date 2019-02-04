@@ -16,7 +16,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
         to: newUser.email,
         from: 'test@example.com',
-        subject: 'Thanks for joining Blocipedia!',
+        subject: 'Thanks for joining WikiCollab!',
         text: 'we are so glad you could join us',
         html: '<strong>start collaborating on wikis today!</strong>',
       };

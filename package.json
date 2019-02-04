@@ -1,5 +1,5 @@
 {
-  "name": "blocipedia",
+  "name": "WikiCollab",
   "version": "1.0.0",
   "description": "An application to share wikis.",
   "main": "src/server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngalang92/blocipedia.git"
+    "url": "git+https://github.com/ngalangSF/WikiCollab.git"
   },
   "keywords": [
     "wiki"
@@ -17,9 +17,9 @@
   "author": "Nick Galang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ngalang92/blocipedia/issues"
+    "url": "https://github.com/ngalangSF/WikiCollab/issues"
   },
-  "homepage": "https://github.com/ngalang92/blocipedia#readme",
+  "homepage": "https://github.com/ngalangSF/WikiCollab#readme",
   "devDependencies": {
     "faker": "^4.1.0",
     "jasmine": "^3.2.0",

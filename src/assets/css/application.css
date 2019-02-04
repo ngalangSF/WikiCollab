@@ -1,3 +1,21 @@
 body {
   padding-top: 54px;
 }
+
+main {
+  padding-top: 15px;
+}
+
+h1 {
+  padding-top: 15px;
+}
+
+h2 {
+  padding-top: 15px;
+}
+
+
+p {
+  padding-top: 10px;
+  display: inline-block;
+}

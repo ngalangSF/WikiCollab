@@ -15,7 +15,8 @@
           <form style="width:25%" action="/wikis/<%= wiki.id %>/collaborators/create" method="post">
             <div class="input-group">
             <input type="text" class="form-control" name="collaborator" placeholder="Enter username">
-            <button type="submit" class="btn btn-secondary">Add</button>
+            <button type="submit" class="btn btn-success">Add</button>
+            <a href="/wikis/<%= wiki.id %>" class="btn btn-primary">Cancel</a>
             </div>
           </form>
         <% } %>

@@ -37,13 +37,18 @@ const wikiQueries = require("../db/queries.wikis.js");
      res.render("users/sign_in");
    },
    signIn(req, res, next){
-     passport.authenticate("local")(req, res, function () {
-       if(!req.user){
+     passport.authenticate("local", {
+       //successFlash:'You have successfully signed in!',
+       //failureFlash : "Login failed, please try again.",
+       successRedirect: '/wikis',
+       failureRedirect: '/users/sign_in'
+     })
+     (req, res, function () {
+      if(!req.user){
          req.flash("notice", "Sign in failed. Please try again.")
-         res.redirect("/users/sign_in");
+
        } else {
          req.flash("notice", "You've successfully signed in!");
-         res.redirect("/");
        }
      })
    },

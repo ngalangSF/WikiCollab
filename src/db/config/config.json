@@ -2,7 +2,7 @@
   "development": {
     "username": "nicks",
     "password": null,
-    "database": "blocipedia",
+    "database": "WikiCollab",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false,
@@ -11,7 +11,7 @@
   "test": {
     "username": "nicks",
     "password": null,
-    "database": "blocipedia-test",
+    "database": "WikiCollab-test",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false,
@@ -20,7 +20,7 @@
   "production": {
     "username": "nicks",
     "password": null,
-    "database": "blocipedia",
+    "database": "WikiCollab-production",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false,

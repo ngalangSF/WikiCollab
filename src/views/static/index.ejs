@@ -10,9 +10,10 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron my-4">
-          <h1 class="display-5">Welcome to Blocipedia</h1>
+          <h1 class="display-5">Welcome to WikiCollab</h1>
           <p class="lead">An application for collaborating on community-sourced content.</p>
           <% if (!currentUser) { %>
+          <br></br>
           <a href="/users/sign_up" class="btn btn-primary btn-lg">Sign up</a>
           <% } %>
         </header>
@@ -21,11 +22,13 @@
         <section class="row text-center">
 
           <section class="col-lg-6">
+            <img src="../images/share.png" alt="shop" height="50" width="50"></img>
             <h4 class="card-title">Share</h4>
             <p class="card-text">Write about subjects that are important to you.</p>
           </section>
 
           <section class="col-lg-6">
+            <img src="../images/collaborate.png" alt="shop" height="50" width="50"></img>            
             <h4 class="card-title">Collaborate</h4>
             <p class="card-text">Join forces with other users.</p>
           </section>

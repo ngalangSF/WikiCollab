@@ -24,8 +24,9 @@
               <option value="true">Private</option>
             </select>
           </div>
-        <% } %>        
-        <button type="submit" class="btn btn-primary">Update</button>
+        <% } %>
+        <a href="/wikis/<%= wiki.id %>" class="btn btn-primary">Cancel</a>        
+        <button type="submit" class="btn btn-success">Update</button>
       </form>
     </main>
      <% include ../static/partials/baseScripts.ejs %>
